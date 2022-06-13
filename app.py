@@ -19,7 +19,7 @@ load_dotenv(find_dotenv())
 
 CONNECTION_URL = os.getenv('CONNECTION_STRING')
 
-app = Flask(__name__) #, static_folder='frontend/build',static_url_path='' <--- this showed up as a suggestion on site
+app = Flask(__name__, static_folder='./static') #, static_folder='frontend/build',static_url_path='' <--- this showed up as a suggestion on site
 app.config['CORS_HEADERS'] = 'Content-Type'
 cors = CORS(app)
 

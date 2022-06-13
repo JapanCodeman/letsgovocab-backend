@@ -26,6 +26,19 @@ cors = CORS(app)
 app.config['JWT_SECRET_KEY'] = os.getenv('SECRET_KEY')
 jwt = JWTManager(app)
 
+html = '''
+<!doctype html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <title>Hello world!</title>
+  </head>
+  <body>
+    <p>Hello world!</p>
+  </body>
+</html>
+'''
+
 
 try:
   client = pymongo.MongoClient(CONNECTION_URL, serverSelectionTimeoutMS = 20000)
@@ -43,7 +56,7 @@ cards = Database.cards
 # Test to see if flask is working
 @app.route('/')
 def test():
-  return "connected to flask"
+  return html
 
 # Login route
 @app.route("/login", methods=["POST"])

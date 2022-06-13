@@ -19,7 +19,7 @@ load_dotenv(find_dotenv())
 
 CONNECTION_URL = os.getenv('CONNECTION_STRING')
 
-app = Flask(__name__, static_url_path='') #, static_folder='frontend/build',static_url_path='' <--- this showed up as a suggestion on site
+app = Flask(__name__) #, static_folder='frontend/build',static_url_path='' <--- this showed up as a suggestion on site
 app.config['CORS_HEADERS'] = 'Content-Type'
 cors = CORS(app)
 
@@ -28,7 +28,7 @@ jwt = JWTManager(app)
 
 
 try:
-  client = pymongo.MongoClient(CONNECTION_URL, serverSelectionTimeoutMS = 2000)
+  client = pymongo.MongoClient(CONNECTION_URL, serverSelectionTimeoutMS = 20000)
 
 except:
   print("Error - cannot connect to database")

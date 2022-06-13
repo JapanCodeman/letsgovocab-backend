@@ -17,13 +17,13 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 load_dotenv(find_dotenv())
 
-CONNECTION_URL = 'mongodb+srv://JapanCodeMan:6yGkgNvnhwU8WlDp@cluster0.b1d3f.mongodb.net/letsgovocab?retryWrites=true&w=majority'
+CONNECTION_URL = os.getenv('CONNECTION_STRING')
 
 app = Flask(__name__, static_folder='./static') #, static_folder='frontend/build',static_url_path='' <--- this showed up as a suggestion on site
 app.config['CORS_HEADERS'] = 'Content-Type'
 cors = CORS(app)
 
-app.config['JWT_SECRET_KEY'] = "f3cfe9ed8fae309f02079dbf"
+app.config['JWT_SECRET_KEY'] = os.getenv('SECRET_KEY')
 jwt = JWTManager(app)
 
 html = '''
@@ -582,4 +582,4 @@ def delete_one_administrator(id):
   return f'Administrator removed from database.'
 
 if __name__ == '__main__':
-  app.run() # Change to false before deploying?
+  app.run(debug=False) # Change to false before deploying?

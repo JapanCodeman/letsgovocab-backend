@@ -17,13 +17,13 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 load_dotenv(find_dotenv())
 
-CONNECTION_URL = os.getenv('CONNECTION_STRING')
+CONNECTION_URL = 'mongodb+srv://JapanCodeMan:6yGkgNvnhwU8WlDp@cluster0.b1d3f.mongodb.net/letsgovocab?retryWrites=true&w=majority'
 
 app = Flask(__name__, static_folder='./static') #, static_folder='frontend/build',static_url_path='' <--- this showed up as a suggestion on site
 app.config['CORS_HEADERS'] = 'Content-Type'
 cors = CORS(app)
 
-app.config['JWT_SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['JWT_SECRET_KEY'] = "f3cfe9ed8fae309f02079dbf"
 jwt = JWTManager(app)
 
 html = '''

@@ -582,4 +582,4 @@ def delete_one_administrator(id):
   return f'Administrator removed from database.'
 
 if __name__ == '__main__':
-  app.run(debug=False) # Change to false before deploying?
+  app.run(host='0.0.0.0', port=5000, debug=False) # Change to false before deploying?

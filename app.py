@@ -45,7 +45,7 @@ html = '''
 
 
 try:
-  client = pymongo.MongoClient(s3(os.environ("MONGODB_URI")), serverSelectionTimeoutMS = 20000)
+  client = pymongo.MongoClient(s3, serverSelectionTimeoutMS = 20000)
 
 except:
   print("Error - cannot connect to database")

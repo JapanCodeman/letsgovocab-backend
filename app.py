@@ -45,7 +45,7 @@ html = '''
 
 
 try:
-  client = pymongo.MongoClient(CONNECTION_URL, serverSelectionTimeoutMS = 20000)
+  client = pymongo.MongoClient(os.environ("MONGODB_URI"), serverSelectionTimeoutMS = 20000)
 
 except:
   print("Error - cannot connect to database")

@@ -6,6 +6,7 @@ import os
 import pymongo
 from bson.objectid import ObjectId
 from bson import json_util
+from boto.s3.connection import S3Connection
 from dotenv import load_dotenv, find_dotenv
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import JWTManager
@@ -14,6 +15,9 @@ from flask_cors import CORS
 from pymongo import ReturnDocument
 import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
+
+
+s3 = S3Connection(os.environ['MONGODB_URI'], os.environ['S3_SECRET'])
 
 load_dotenv(find_dotenv())
 

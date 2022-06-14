@@ -14,6 +14,8 @@ flask-jwt-extended = "==4.3.1"
 pyjwt = "*"
 python-dotenv = "*"
 gunicorn = "*"
+mongodbatlas = "*"
+boto = "*"
 
 [dev-packages]
 

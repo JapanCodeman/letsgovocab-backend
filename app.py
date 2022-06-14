@@ -45,7 +45,7 @@ html = '''
 
 
 try:
-  client = pymongo.MongoClient(s3, serverSelectionTimeoutMS = 20000)
+  client = pymongo.MongoClient('mongodb+srv://JapanCodeMan:6yGkgNvnhwU8WlDp@cluster0.b1d3f.mongodb.net/letsgovocab?retryWrites=true&w=majority', serverSelectionTimeoutMS = 20000)
 
 except:
   print("Error - cannot connect to database")

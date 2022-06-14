@@ -15,7 +15,6 @@ pyjwt = "*"
 python-dotenv = "*"
 gunicorn = "*"
 mongodbatlas = "*"
-boto3 = "*"
 
 [dev-packages]
 

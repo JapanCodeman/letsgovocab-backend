@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f307804f0da1348b672c9c91f9d053cde9ca6f79652031a053673f694b8a3e61"
+            "sha256": "7464f360aaad25c0182411d11f1ec8ecf1df007d875c8c050c4724ca9255e6ee"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,22 +16,6 @@
         ]
     },
     "default": {
-        "boto3": {
-            "hashes": [
-                "sha256:28ab0947c49a6fb2409004d4a10b2828aec231cb95ca1d800cb1411e191cc201",
-                "sha256:833e67edfb73f2cc22ff27a1c33728686dc90a9e81ba2551f9462ea2d1b04f41"
-            ],
-            "index": "pypi",
-            "version": "==1.24.8"
-        },
-        "botocore": {
-            "hashes": [
-                "sha256:ad92702930d6cb7b587fc2f619672feb74d5218f8de387a28c2905820db79027",
-                "sha256:db6667b8dfd175d16187653942cd91dd1f0cf36adc0ea9d7a0805ba4d2a3321f"
-            ],
-            "markers": "python_version >= '3.7'",
-            "version": "==1.27.8"
-        },
         "bson": {
             "hashes": [
                 "sha256:d6511b2ab051139a9123c184de1a04227262173ad593429d21e443d6462d6590"
@@ -44,7 +28,7 @@
                 "sha256:9c5705e395cd70084351dd8ad5c41e65655e08ce46f2ec9cf6c2c08390f71eb7",
                 "sha256:f1d53542ee8cbedbe2118b5686372fb33c297fcd6379b050cca0ef13a597382a"
             ],
-            "markers": "python_full_version >= '3.6.0'",
+            "markers": "python_version >= '3.6'",
             "version": "==2022.5.18.1"
         },
         "charset-normalizer": {
@@ -142,14 +126,6 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==3.1.2"
-        },
-        "jmespath": {
-            "hashes": [
-                "sha256:a490e280edd1f57d6de88636992d05b71e97d69a26a19f058ecf7d304474bf5e",
-                "sha256:e8dcd576ed616f14ec02eed0005c85973b5890083313860136657e24784e4c04"
-            ],
-            "markers": "python_version >= '3.7'",
-            "version": "==1.0.0"
         },
         "markupsafe": {
             "hashes": [
@@ -327,14 +303,6 @@
             ],
             "markers": "python_version >= '3.7' and python_version < '4'",
             "version": "==2.28.0"
-        },
-        "s3transfer": {
-            "hashes": [
-                "sha256:06176b74f3a15f61f1b4f25a1fc29a4429040b7647133a463da8fa5bd28d5ecd",
-                "sha256:2ed07d3866f523cc561bf4a00fc5535827981b117dd7876f036b0c1aca42c947"
-            ],
-            "markers": "python_version >= '3.7'",
-            "version": "==0.6.0"
         },
         "setuptools": {
             "hashes": [

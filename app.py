@@ -6,8 +6,7 @@ import os
 import pymongo
 from bson.objectid import ObjectId
 from bson import json_util
-from boto3 import s3
-# from dotenv import load_dotenv, find_dotenv
+from dotenv import load_dotenv
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import JWTManager
 from flask import Flask, jsonify, make_response, Response, request
@@ -17,15 +16,14 @@ import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-s3 = s3(os.environ['MONGODB_URI'], os.environ['SECRET_KEY'])
-CONNECTION_URL = os.environ['MONGODB_URI']
-SECRET_KEY = os.environ['SECRET_KEY']
+CONNECTION_URL = os.environ.get('MONGODB_URI')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# load_dotenv(find_dotenv())
+load_dotenv() #find_dotenv() <--- this can be put in load_dotenv() as an argument to auto search folders for .env
 
-# CONNECTION_URL = os.getenv('CONNECTION_STRING')
+# CONNECTION_URL = os.getenv('MONGODB_URI') <---- for running locally
 
-app = Flask(__name__, static_folder='./static') #, static_folder='frontend/build',static_url_path='' <--- this showed up as a suggestion on site
+app = Flask(__name__, static_folder='./static') 
 app.config['CORS_HEADERS'] = 'Content-Type'
 cors = CORS(app)
 
@@ -47,7 +45,7 @@ html = '''
 
 
 try:
-  client = pymongo.MongoClient(CONNECTION_URL, serverSelectionTimeoutMS = 20000)
+  client = pymongo.MongoClient(CONNECTION_URL, serverSelectionTimeoutMS = 5000)
 
 except:
   print("Error - cannot connect to database")

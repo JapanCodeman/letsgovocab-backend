@@ -7,7 +7,7 @@ import pymongo
 from bson.objectid import ObjectId
 from bson import json_util
 from boto.s3.connection import S3Connection
-from dotenv import load_dotenv, find_dotenv
+# from dotenv import load_dotenv, find_dotenv
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import JWTManager
 from flask import Flask, jsonify, make_response, Response, request
@@ -19,15 +19,15 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 s3 = S3Connection(os.environ['MONGODB_URI'], os.environ['SECRET_KEY'])
 
-load_dotenv(find_dotenv())
+# load_dotenv(find_dotenv())
 
-CONNECTION_URL = os.getenv('CONNECTION_STRING')
+# CONNECTION_URL = os.getenv('CONNECTION_STRING')
 
 app = Flask(__name__, static_folder='./static') #, static_folder='frontend/build',static_url_path='' <--- this showed up as a suggestion on site
 app.config['CORS_HEADERS'] = 'Content-Type'
 cors = CORS(app)
 
-app.config['JWT_SECRET_KEY'] = os.getenv('SECRET_KEY')
+# app.config['JWT_SECRET_KEY'] = os.getenv('SECRET_KEY')
 jwt = JWTManager(app)
 
 html = '''

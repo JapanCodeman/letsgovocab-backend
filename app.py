@@ -17,7 +17,7 @@ import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-s3 = S3Connection(os.environ['MONGODB_URI'], os.environ['S3_SECRET'])
+s3 = S3Connection(os.environ['MONGODB_URI'], os.environ['SECRET_KEY'])
 
 load_dotenv(find_dotenv())
 

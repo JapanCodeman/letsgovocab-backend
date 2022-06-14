@@ -18,6 +18,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 s3 = s3(os.environ['MONGODB_URI'], os.environ['SECRET_KEY'])
+CONNECTION_URL = os.environ['MONGODB_URI']
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # load_dotenv(find_dotenv())
 
@@ -27,7 +29,7 @@ app = Flask(__name__, static_folder='./static') #, static_folder='frontend/build
 app.config['CORS_HEADERS'] = 'Content-Type'
 cors = CORS(app)
 
-# app.config['JWT_SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['JWT_SECRET_KEY'] = SECRET_KEY
 jwt = JWTManager(app)
 
 html = '''
@@ -45,7 +47,7 @@ html = '''
 
 
 try:
-  client = pymongo.MongoClient('mongodb+srv://JapanCodeMan:6yGkgNvnhwU8WlDp@cluster0.b1d3f.mongodb.net/letsgovocab?retryWrites=true&w=majority', serverSelectionTimeoutMS = 20000)
+  client = pymongo.MongoClient(CONNECTION_URL, serverSelectionTimeoutMS = 20000)
 
 except:
   print("Error - cannot connect to database")

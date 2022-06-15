@@ -6,7 +6,7 @@ import os
 import pymongo
 from bson.objectid import ObjectId
 from bson import json_util
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import JWTManager
 from flask import Flask, jsonify, make_response, Response, request
@@ -21,7 +21,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 load_dotenv() #find_dotenv() <--- this can be put in load_dotenv() as an argument to auto search folders for .env
 
-# CONNECTION_URL = os.getenv('MONGODB_URI') <---- for running locally
+CONNECTION_URL = os.environ.get('MONGODB_URI')  #<---- for running locally
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 app = Flask(__name__, static_folder='./static') 
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -35,10 +36,10 @@ html = '''
 <html>
   <head>
     <link rel="shortcut icon" href="/favicon.ico">
-    <title>Hello world!</title>
+    <title>letsgovocab-backend</title>
   </head>
   <body>
-    <p>Hello world!</p>
+    <p>Backend for letsgovocab is running</p>
   </body>
 </html>
 '''

@@ -15,13 +15,9 @@ from pymongo import ReturnDocument
 import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
 
-
-CONNECTION_URL = os.environ.get('MONGODB_URI')
-SECRET_KEY = os.environ.get('SECRET_KEY')
-
 load_dotenv() #find_dotenv() <--- this can be put in load_dotenv() as an argument to auto search folders for .env
 
-CONNECTION_URL = os.environ.get('MONGODB_URI')  #<---- for running locally
+CONNECTION_URL = os.environ.get('MONGODB_URI')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 app = Flask(__name__, static_folder='./static') 
@@ -35,7 +31,6 @@ html = '''
 <!doctype html>
 <html>
   <head>
-    <link rel="shortcut icon" href="/favicon.ico">
     <title>letsgovocab-backend</title>
   </head>
   <body>
@@ -587,4 +582,4 @@ def delete_one_administrator(id):
   return f'Administrator removed from database.'
 
 if __name__ == '__main__':
-  app.run(debug=False) # Change to false before deploying?
+  app.run(debug=False) 
